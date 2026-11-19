@@ -36,4 +36,7 @@ jobs:
         run: |
           set -euo pipefail
           cd "$RUNNER_TEMP/source"
+          git checkout --orphan cnb-android17-prep
+          git add -A
+          git commit -m "Import and adapt coral Evolution X device tree for AxionOS"
           git push "https://x-access-token:${GH_TOKEN}@github.com/its-hecker/axion-cnb-coral-dt.git" HEAD:refs/heads/cnb-android17-prep
